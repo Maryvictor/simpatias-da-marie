@@ -1,0 +1,35 @@
+{% macro phase_name(phase_id) %}{% for p in PHASES %}{% if p.id == phase_id %}{{ p.name }}{% endif %}{% endfor %}{% endmacro %}
+{% macro intention_name(intention_id) %}{% for i in INTENTIONS %}{% if i.id == intention_id %}{{ i.name }}{% endif %}{% endfor %}{% endmacro %}
+{% macro category_name(category_id) %}{% for c in CATEGORIES %}{% if c.id == category_id %}{{ c.name }}{% endif %}{% endfor %}{% endmacro %}
+
+{% macro phase_tags(phases) %}
+<ul class="tags" aria-label="Fases da Lua">
+  {% for phase in phases %}<li class="tag tag-moon">{{ phase_name(phase) }}</li>{% endfor %}
+</ul>
+{% endmacro %}
+
+{% macro spell_card(spell) %}
+<article class="card spell-card" id="{{ spell.id }}">
+  <h3>{{ spell.title }}</h3>
+  <p>{{ spell.summary }}</p>
+  {{ phase_tags(spell.phases) }}
+  {% if spell.kind == 'interativa' %}
+  <a class="btn" href="{{ SITEURL }}/{{ spell.page }}/index.html">Fazer a simpatia</a>
+  {% else %}
+  <details>
+    <summary>Ver o passo a passo</summary>
+    <ol>{% for step in spell.steps %}<li>{{ step }}</li>{% endfor %}</ol>
+  </details>
+  {% endif %}
+</article>
+{% endmacro %}
+
+{% macro product_card(product) %}
+<article class="card product-card" data-product-id="{{ product.id }}">
+  <img src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/categories/{{ product.category }}.svg" alt="" width="72" height="72" loading="lazy">
+  <h3><a href="{{ SITEURL }}/loja/{{ product.id }}/index.html">{{ product.name }}</a></h3>
+  <p class="small">{{ category_name(product.category) }}</p>
+  <p>{{ product.description }}</p>
+  <p class="price">{{ product.price_cents | price }} <span class="small">· demonstrativo</span></p>
+</article>
+{% endmacro %}

@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% from '_macros.html' import product_card with context %}
+{% set nav_slug = 'loja' %}
+{% block title %}{{ page.title }} – {{ SITENAME }}{% endblock %}
+{% block head_extra %}<link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/shop.css">{% endblock %}
+{% block content %}
+<h1>{{ page.title }}</h1>
+<p class="notice" role="note">Esta loja é apenas uma vitrine demonstrativa: não há pagamento, estoque nem pedidos. Os preços são ilustrativos.</p>
+
+<section data-shop aria-label="Produtos">
+  <form class="filters" onsubmit="return false">
+    <label>Categoria
+      <select data-filter="category">
+        <option value="">Todas</option>
+        {% for c in CATEGORIES %}<option value="{{ c.id }}">{{ c.name }}</option>{% endfor %}
+      </select>
+    </label>
+    <label>Intenção
+      <select data-filter="intention">
+        <option value="">Todas</option>
+        {% for i in INTENTIONS %}<option value="{{ i.id }}">{{ i.name }}</option>{% endfor %}
+      </select>
+    </label>
+    <label>Fase da Lua
+      <select data-filter="phase">
+        <option value="">Todas</option>
+        {% for p in PHASES %}<option value="{{ p.id }}">{{ p.name }}</option>{% endfor %}
+      </select>
+    </label>
+    <button type="button" class="btn btn-quiet" data-filter-reset>Limpar filtros</button>
+  </form>
+  <p class="small" role="status" aria-live="polite" data-shop-status>{{ PRODUCTS | length }} produtos encontrados.</p>
+  <p data-shop-empty hidden>Nenhum produto combina com esses filtros. Tente limpar um deles.</p>
+  <div class="grid">
+    {% for product in PRODUCTS %}{{ product_card(product) }}{% endfor %}
+  </div>
+</section>
+
+<script type="application/json" id="products-data">{{ PRODUCTS | tojson }}</script>
+{% endblock %}
+{% block scripts %}<script type="module" src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/shop/shop-ui.js"></script>{% endblock %}

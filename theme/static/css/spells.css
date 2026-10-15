@@ -1,0 +1,72 @@
+/* Simpatias interativas: o JS só troca [data-state]; as animações vivem aqui. */
+.ritual { display: grid; gap: 1.2rem; max-width: 46rem; }
+.ritual-form { gap: 0.4rem; }
+.stage { position: relative; overflow: hidden; border-radius: var(--radius); background: linear-gradient(180deg, var(--rose-50), var(--cream-200)); border: 1px solid var(--line); min-height: 6rem; padding: 0.5rem; }
+.stage .art { display: block; width: 100%; max-width: 26rem; margin-inline: auto; }
+.result { text-align: center; padding: 1rem; }
+.echo { font-family: var(--font-display); font-style: italic; color: var(--gold-800); }
+.message { font-family: var(--font-display); font-size: 1.3rem; color: var(--rose-800); outline: none; margin: 0 auto 1rem; max-width: 34rem; }
+
+/* Maçãs e mel */
+.art-apples, .art-rose { opacity: 0; max-height: 0; }
+[data-state="macas"] .art-apples, [data-state="mel"] .art-apples, [data-state="mensagem"] .art-apples,
+[data-state="petalas"] .art-rose, [data-state="mensagem"] .art-rose { opacity: 1; max-height: 24rem; transition: opacity 0.6s; }
+.apple { transform-box: fill-box; transform-origin: center; opacity: 0; }
+[data-state="macas"] .apple, [data-state="mel"] .apple, [data-state="mensagem"] .apple { animation: apple-in 1.4s cubic-bezier(.2,.9,.3,1.2) forwards; }
+.apple-b { animation-delay: 0.35s !important; }
+.honey { stroke-dasharray: 1; stroke-dashoffset: 1; }
+[data-state="mel"] .honey, [data-state="mensagem"] .honey { animation: honey-flow 4s ease-in-out forwards; }
+.honey-2 { animation-delay: 0.6s !important; }
+.drop { opacity: 0; transform-box: fill-box; transform-origin: center; }
+[data-state="mel"] .drop, [data-state="mensagem"] .drop { animation: drop-in 0.8s 3.6s ease-out forwards; }
+.drop-2 { animation-delay: 4s !important; }
+@keyframes apple-in { from { opacity: 0; transform: translateY(-40px) scale(0.7); } to { opacity: 1; transform: none; } }
+@keyframes honey-flow { to { stroke-dashoffset: 0; } }
+@keyframes drop-in { from { opacity: 0; transform: translateY(-10px) scale(0.3); } to { opacity: 1; transform: none; } }
+
+/* Rosa e pétalas */
+.rose { transform-box: fill-box; transform-origin: center; }
+[data-state="petalas"] .rose { animation: rose-fade 6.5s ease-in forwards; }
+[data-state="mensagem"] .rose { opacity: 0.35; }
+.petals { position: absolute; inset: 0; pointer-events: none; }
+.petal { position: absolute; left: -8%; top: var(--y); width: 20px; height: 28px; border-radius: 70% 0 70% 0; background: linear-gradient(135deg, #fff, #fbdde5); box-shadow: 0 0 0 1px #f3d3dc; opacity: 0; transform: rotate(var(--rot)); }
+[data-state="petalas"] .petal { animation: petal-fly var(--dur) var(--delay) ease-in-out forwards, petal-sway 1.6s var(--delay) ease-in-out infinite alternate; }
+@keyframes petal-fly { 0% { left: 46%; opacity: 0; } 10% { opacity: 1; } 85% { opacity: 1; } 100% { left: 108%; opacity: 0; } }
+@keyframes petal-sway { from { margin-top: calc(var(--sway) * -1); rotate: 0deg; } to { margin-top: var(--sway); rotate: 120deg; } }
+@keyframes rose-fade { 0%, 30% { opacity: 1; } 100% { opacity: 0.15; } }
+
+/* Correios Imaginários */
+.mail { position: relative; display: grid; justify-items: center; gap: 1rem; padding: 1rem 0.5rem 0; min-height: 14rem; }
+.paper { width: min(100%, 26rem); max-height: 15rem; overflow: auto; background: #fffdf6 repeating-linear-gradient(transparent 0 27px, #f1e3c6 27px 28px); border: 1px solid #ead9b5; border-radius: 6px; padding: 0.6rem 1rem; font-family: var(--font-display); line-height: 28px; white-space: pre-wrap; overflow-wrap: anywhere; box-shadow: var(--shadow); text-align: left; }
+[data-state="envelope"] .paper { animation: paper-in 1.3s ease-in forwards; }
+.envelope { position: relative; width: 14rem; height: 9rem; opacity: 0; transform: translateY(20px) scale(0.85); transition: opacity 0.6s, transform 0.6s; }
+[data-state="envelope"] .envelope, [data-state="selo"] .envelope, [data-state="voo"] .envelope { opacity: 1; transform: none; }
+[data-state="voo"] .envelope { animation: envelope-fly 4.2s ease-in forwards; }
+.env-back, .env-front { position: absolute; inset: 0; border-radius: 8px; }
+.env-back { background: #f6d3dc; }
+.env-letter { position: absolute; left: 8%; right: 8%; top: 10%; height: 70%; background: #fffdf6; border-radius: 4px; }
+.env-front { background: linear-gradient(135deg, transparent 49.5%, #f0b9c8 50%) 0 0 / 50% 100% no-repeat, linear-gradient(225deg, transparent 49.5%, #f0b9c8 50%) 100% 0 / 50% 100% no-repeat, #f9dde4; clip-path: polygon(0 0, 50% 55%, 100% 0, 100% 100%, 0 100%); }
+.env-flap { position: absolute; left: 0; right: 0; top: 0; height: 55%; background: #f4c4d1; clip-path: polygon(0 0, 100% 0, 50% 100%); transform-origin: top; transition: transform 0.9s 1.3s ease-in-out; transform: rotateX(180deg); }
+[data-state="envelope"] .env-flap, [data-state="selo"] .env-flap, [data-state="voo"] .env-flap { transform: rotateX(0deg); }
+.stamp { position: absolute; right: 8%; bottom: 10%; opacity: 0; transform: scale(2.4) rotate(-14deg); }
+[data-state="selo"] .stamp, [data-state="voo"] .stamp { animation: stamp-press 0.8s ease-out forwards; }
+.stage[data-state="fim"] .envelope { opacity: 0; }
+@keyframes paper-in { 0% { transform: none; opacity: 1; } 100% { transform: translateY(8rem) scale(0.35); opacity: 0; } }
+@keyframes stamp-press { 0% { opacity: 0; transform: scale(2.4) rotate(-14deg); } 70% { opacity: 1; transform: scale(0.9) rotate(-6deg); } 100% { opacity: 1; transform: scale(1) rotate(-6deg); } }
+@keyframes envelope-fly {
+  0% { transform: translate(0, 0) rotate(0) scale(1); opacity: 1; }
+  30% { transform: translate(-6vw, -3rem) rotate(-8deg) scale(0.9); }
+  65% { transform: translate(12vw, -7rem) rotate(10deg) scale(0.6); opacity: 1; }
+  100% { transform: translate(30vw, -14rem) rotate(24deg) scale(0.15); opacity: 0; }
+}
+
+/* Movimento reduzido: sem voos e quedas; os estados finais aparecem com um fade curto. */
+@media (prefers-reduced-motion: reduce) {
+  .apple, .honey, .drop, .stamp { animation: none !important; opacity: 1; stroke-dashoffset: 0; transform: none; }
+  [data-state="petalas"] .petal { animation: none; }
+  [data-state="voo"] .envelope { animation: none; }
+  .env-flap { transition: none; }
+}
+
+/* Antes de começar, só o formulário aparece. */
+.stage[data-state="intencao"], .stage[data-state="escrever"] { display: none; }

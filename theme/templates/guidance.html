@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% set character = LACAN if page.character == 'lacan' else MARCIA %}
+{% set nav_slug = page.slug %}
+{% block title %}{{ character.name }} – {{ SITENAME }}{% endblock %}
+{% block description %}{{ character.tagline }}{% endblock %}
+{% block head_extra %}<link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/guidance.css">{% endblock %}
+{% block content %}
+<article class="guidance guidance-{{ character.id }}" data-guidance data-root="{{ SITEURL }}">
+  <h1>{{ character.name }}</h1>
+  <p class="lead">{{ character.tagline }}</p>
+  <p class="bubble bubble-greeting">{{ character.greeting }}</p>
+
+  <form class="card" data-form>
+    <fieldset>
+      <legend>Sobre o que você quer conversar?</legend>
+      <div class="chips">
+        {% for scenario in SCENARIOS.scenarios %}
+        <button type="button" class="chip" data-scenario="{{ scenario.id }}" aria-pressed="false">{{ scenario.label }}</button>
+        {% endfor %}
+      </div>
+    </fieldset>
+    <label for="relato">Se quiser, conte em poucas palavras (opcional)</label>
+    <textarea id="relato" data-input rows="3" maxlength="280" autocomplete="off"></textarea>
+    <p class="small">O que você escreve não é guardado nem enviado: a resposta é calculada aqui, no seu navegador.</p>
+    <button class="btn" type="submit">Perguntar</button>
+  </form>
+
+  <section class="answer" data-answer aria-live="polite" hidden>
+    <p class="bubble" data-bubble tabindex="-1"></p>
+    <p><a class="btn btn-ghost" data-suggestion href="#" hidden></a></p>
+    <button type="button" class="btn btn-quiet" data-again hidden>{{ character.again }}</button>
+  </section>
+
+  <p class="small disclaimer">{{ character.name }} é um personagem fictício e lúdico. Não faz diagnóstico, não substitui acompanhamento psicológico e não promete resultados.</p>
+</article>
+
+<script type="application/json" id="guidance-data">{{ {
+  'character': character,
+  'scenarios': SCENARIOS.scenarios,
+  'crisisKeywords': SCENARIOS.crisis_keywords,
+  'crisisMessage': SCENARIOS.crisis_message,
+  'spells': SPELLS
+} | tojson }}</script>
+{% endblock %}
+{% block scripts %}<script type="module" src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/guidance/guidance-ui.js"></script>{% endblock %}

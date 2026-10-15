@@ -1,0 +1,61 @@
+/* Componentes reutilizáveis: botões, cartões, formulários, tags, hero. */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem;
+  min-height: 46px; padding: 0.6rem 1.4rem; border-radius: 999px; border: 2px solid var(--rose-600);
+  background: var(--rose-600); color: var(--white); font: inherit; font-weight: 600; text-decoration: none; cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+.btn:hover { background: var(--rose-800); border-color: var(--rose-800); color: var(--white); transform: translateY(-1px); }
+.btn-ghost { background: transparent; color: var(--rose-800); border-color: var(--rose-400); }
+.btn-ghost:hover { background: var(--rose-100); color: var(--rose-800); border-color: var(--rose-600); }
+.btn-quiet { background: transparent; color: var(--rose-800); border-color: transparent; min-height: 44px; }
+.btn-quiet:hover { background: var(--rose-100); color: var(--rose-800); }
+.actions { display: flex; flex-wrap: wrap; gap: 0.8rem; }
+
+.card { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.3rem; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 0.2rem; }
+.card > .btn { align-self: flex-start; margin-top: auto; }
+.card details { margin-top: auto; }
+.card summary { cursor: pointer; font-weight: 600; color: var(--rose-800); min-height: 44px; display: flex; align-items: center; }
+.card ol { padding-left: 1.2rem; }
+
+.tags { list-style: none; display: flex; flex-wrap: wrap; gap: 0.4rem; padding: 0; margin: 0 0 1rem; }
+.tag { display: inline-block; padding: 0.15rem 0.7rem; border-radius: 999px; background: var(--cream-200); color: var(--gold-800); font-size: 0.82rem; font-weight: 600; }
+.tag-moon { background: var(--rose-100); color: var(--rose-800); }
+.tag-current { background: var(--gold); color: var(--ink); }
+
+label { display: block; font-weight: 600; margin-bottom: 0.3rem; }
+input[type="text"], textarea, select {
+  width: 100%; font: inherit; color: var(--ink); background: var(--cream);
+  border: 2px solid var(--line); border-radius: 12px; padding: 0.7rem 0.9rem; min-height: 46px;
+}
+input[type="text"]:focus, textarea:focus, select:focus { border-color: var(--rose-600); outline: none; box-shadow: 0 0 0 3px var(--rose-200); }
+textarea { resize: vertical; }
+fieldset { border: 0; padding: 0; margin: 0 0 1rem; }
+legend { font-weight: 600; padding: 0; margin-bottom: 0.5rem; }
+.error { color: #a1182f; font-weight: 600; }
+.notice { background: var(--gold-200); border-left: 5px solid var(--gold); padding: 0.8rem 1rem; border-radius: 10px; }
+
+.hero { position: relative; text-align: center; padding: 3rem 0 2.5rem; overflow: hidden; }
+.hero .lead { margin-inline: auto; }
+.hero .actions { justify-content: center; }
+.hero > * { position: relative; z-index: 1; }
+.hero > .hero-petals { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.hero-petals span { position: absolute; width: 18px; height: 26px; border-radius: 70% 0 70% 0; background: linear-gradient(135deg, var(--white), var(--rose-200)); opacity: 0.8; animation: drift 9s ease-in-out infinite; }
+.hero-petals span:nth-child(1) { left: 8%; top: 20%; }
+.hero-petals span:nth-child(2) { left: 88%; top: 30%; animation-delay: -2s; }
+.hero-petals span:nth-child(3) { left: 20%; top: 75%; animation-delay: -4s; }
+.hero-petals span:nth-child(4) { left: 76%; top: 80%; animation-delay: -6s; }
+.hero-petals span:nth-child(5) { left: 50%; top: 8%; animation-delay: -1s; }
+@keyframes drift { 0%, 100% { transform: translate(0, 0) rotate(0); } 50% { transform: translate(18px, 26px) rotate(40deg); } }
+
+.history-list { list-style: none; padding: 0; display: grid; gap: 0.8rem; }
+.history-item { display: flex; justify-content: space-between; align-items: center; gap: 1rem; background: var(--white); border: 1px solid var(--line); border-radius: 14px; padding: 0.8rem 1rem; }
+.history-item time { display: block; color: var(--muted); font-size: 0.9rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+  .hero > * { position: relative; z-index: 1; }
+.hero > .hero-petals { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.hero-petals span { animation: none; }
+}

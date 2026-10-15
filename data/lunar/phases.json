@@ -1,0 +1,6 @@
+[
+  {"id": "nova", "name": "Lua Nova", "theme": "Intenção e recomeço", "meaning": "Na simbologia da marca, a Lua Nova é o convite para plantar uma intenção e começar de novo, com calma.", "tip": "Escreva uma intenção simples e acenda uma vela branca."},
+  {"id": "crescente", "name": "Lua Crescente", "theme": "Atração e crescimento", "meaning": "Na simbologia da marca, a Lua Crescente é o tempo de cuidar do que está brotando e dar passos pequenos em direção ao desejo.", "tip": "Escolha uma ação concreta para esta semana e celebre quando fizer."},
+  {"id": "cheia", "name": "Lua Cheia", "theme": "Gratidão e realização", "meaning": "Na simbologia da marca, a Lua Cheia é o momento de reconhecer o que floresceu e agradecer.", "tip": "Liste três coisas pelas quais você é grata hoje."},
+  {"id": "minguante", "name": "Lua Minguante", "theme": "Reflexão e desapego", "meaning": "Na simbologia da marca, a Lua Minguante é a fase de revisar, soltar o que pesa e abrir espaço.", "tip": "Escolha uma coisa para soltar e faça uma despedida simbólica."}
+]

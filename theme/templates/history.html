@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% set nav_slug = 'historico' %}
+{% block title %}{{ page.title }} – {{ SITENAME }}{% endblock %}
+{% block content %}
+<h1>{{ page.title }}</h1>
+<p class="lead">As dez últimas simpatias que você fez neste navegador. Guardamos apenas qual simpatia foi, o dia e a hora, nunca nomes, intenções ou cartas.</p>
+
+<section data-history aria-label="Histórico">
+  <p class="notice" data-history-notice hidden role="note">Seu navegador está bloqueando o armazenamento local. O histórico funciona só enquanto esta página estiver aberta.</p>
+  <p data-history-empty>Você ainda não fez nenhuma simpatia. <a href="{{ SITEURL }}/catalogo/index.html">Que tal começar por uma?</a></p>
+  <ol class="history-list" data-history-list></ol>
+  <p><button type="button" class="btn btn-ghost" data-history-clear hidden>Limpar todo o histórico</button></p>
+  <p class="small" role="status" aria-live="polite" data-history-status></p>
+</section>
+
+<script type="application/json" id="spells-data">{{ SPELLS | tojson }}</script>
+{% endblock %}
+{% block scripts %}<script type="module" src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/history/history-ui.js"></script>{% endblock %}

@@ -1,0 +1,9 @@
+{
+  "name": "simpatias-da-marie",
+  "private": true,
+  "type": "module",
+  "description": "Testes JavaScript do site (sem dependências; requer Node 14.17 ou superior).",
+  "scripts": {
+    "test": "node tests/javascript/run.mjs"
+  }
+}

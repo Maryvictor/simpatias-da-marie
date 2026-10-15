@@ -1,0 +1,20 @@
+{
+  "categories": [
+    {"id": "velas", "name": "Velas naturais"},
+    {"id": "ervas", "name": "Ervas e plantas"},
+    {"id": "flores", "name": "Flores e pétalas"},
+    {"id": "banhos", "name": "Sais e banhos"},
+    {"id": "papeis", "name": "Papéis e envelopes"},
+    {"id": "mel", "name": "Mel e especiarias"},
+    {"id": "cristais", "name": "Pedras e cristais"},
+    {"id": "kits", "name": "Kits de intenções"}
+  ],
+  "intentions": [
+    {"id": "amor-proprio", "name": "Amor-próprio"},
+    {"id": "prosperidade", "name": "Prosperidade"},
+    {"id": "recomeco", "name": "Recomeço"},
+    {"id": "deixar-ir", "name": "Deixar ir"},
+    {"id": "novo-ciclo", "name": "Novo ciclo"},
+    {"id": "gratidao", "name": "Gratidão"}
+  ]
+}

@@ -1,0 +1,145 @@
+[
+  {
+    "id": "maca-fuji-com-mel",
+    "title": "Simpatia das Maçãs Fuji com Mel",
+    "kind": "interativa",
+    "page": "simpatias/maca-fuji-com-mel",
+    "summary": "Duas maçãs, um fio de mel e a doçura que começa em você.",
+    "phases": ["crescente", "cheia"],
+    "intentions": ["amor-proprio", "novo-ciclo"],
+    "products": ["mel-silvestre", "vela-de-mel", "kit-amor-proprio"],
+    "steps": [
+      "Diga seu nome ou uma intenção.",
+      "Duas maçãs aparecem lado a lado.",
+      "O mel escorre devagar sobre elas.",
+      "Receba a mensagem simbólica do ritual."
+    ],
+    "messages": [
+      "Como o mel que escorre sem pressa, a doçura que você procura já pode começar em suas próprias mãos.",
+      "Duas maçãs, duas metades de uma mesma fruta: cuidar de si também é um jeito de abrir espaço para o encontro.",
+      "O que é bom amadurece no tempo certo. Hoje, permita-se saborear o caminho, não só o destino.",
+      "Que a sua intenção fique pegajosa de tão doce: difícil de esquecer e fácil de lembrar nos dias comuns.",
+      "Maçã é fruto de quem plantou. Que sua intenção encontre terra boa, e você, paciência gentil."
+    ]
+  },
+  {
+    "id": "rosa-branca-no-vento",
+    "title": "Rosa Branca no Vento",
+    "kind": "interativa",
+    "page": "simpatias/rosa-branca-no-vento",
+    "summary": "Pétalas brancas atravessam a tela levando sua intenção.",
+    "phases": ["minguante", "nova"],
+    "intentions": ["deixar-ir", "recomeco"],
+    "products": ["petalas-rosa-branca", "kit-recomeco", "kit-deixar-ir"],
+    "steps": [
+      "Diga seu nome ou uma intenção.",
+      "Uma rosa branca se abre.",
+      "As pétalas partem com o vento.",
+      "Receba o texto de acolhimento."
+    ],
+    "messages": [
+      "Deixar ir não é esquecer: é abrir a mão para que o vento leve o peso e você fique com o aprendizado.",
+      "Cada pétala carregou um pouquinho do que você não precisa mais carregar. Respire fundo, o caminho está mais leve.",
+      "Nem toda despedida é perda. Algumas são só espaço sendo aberto para o que ainda vai florescer.",
+      "O vento não pergunta para onde vai. Confie que a sua intenção chega onde precisa chegar, e descanse.",
+      "Você pode sentir saudade e seguir em frente ao mesmo tempo. As duas coisas cabem em você."
+    ]
+  },
+  {
+    "id": "correios-imaginarios",
+    "title": "Correios Imaginários",
+    "kind": "interativa",
+    "page": "simpatias/correios-imaginarios",
+    "summary": "Escreva uma carta que nunca será enviada e veja o envelope voar.",
+    "phases": ["minguante", "nova", "cheia"],
+    "intentions": ["deixar-ir", "gratidao"],
+    "products": ["papel-de-carta-creme", "envelopes-rosa-pequenos", "selos-de-cera-dourada", "kit-deixar-ir"],
+    "steps": [
+      "Escreva sua carta no papel.",
+      "Dobre e coloque no envelope.",
+      "Aplique o selo virtual.",
+      "Acompanhe o envelope voar pela tela."
+    ],
+    "messages": [
+      "Sua carta foi escrita, selada e entregue ao céu. Ninguém vai ler, e mesmo assim ela cumpriu o seu papel: você disse o que precisava dizer.",
+      "Palavras ditas, mesmo sem destinatário, deixam de pesar dentro do peito. Que esse alívio acompanhe você hoje.",
+      "O correio imaginário não perde cartas: ele guarda todas num lugar de silêncio e cuidado.",
+      "Escrever é um jeito de conversar consigo. Obrigada por se escutar com tanta honestidade."
+    ]
+  },
+  {
+    "id": "vela-do-recomeco",
+    "title": "Vela do Recomeço",
+    "kind": "ritual",
+    "summary": "Uma vela branca acesa para marcar o início de um novo capítulo.",
+    "phases": ["nova"],
+    "intentions": ["recomeco", "novo-ciclo"],
+    "products": ["vela-branca-recomeco", "alecrim-seco", "kit-recomeco"],
+    "steps": [
+      "Escolha um canto tranquilo e acenda a vela branca com atenção.",
+      "Diga em voz baixa uma frase que comece com: \"A partir de hoje, eu...\"",
+      "Observe a chama por um minuto e respire devagar.",
+      "Apague a vela soprando suavemente e anote uma pequena ação para amanhã."
+    ]
+  },
+  {
+    "id": "banho-de-petalas",
+    "title": "Banho de Pétalas",
+    "kind": "ritual",
+    "summary": "Um banho morno com pétalas para lembrar que você merece cuidado.",
+    "phases": ["crescente", "cheia"],
+    "intentions": ["amor-proprio", "gratidao"],
+    "products": ["petalas-rosa-rosa", "sais-de-rosas", "kit-amor-proprio"],
+    "steps": [
+      "Prepare um banho morno e espalhe as pétalas na água.",
+      "Agradeça mentalmente por três coisas que seu corpo fez por você hoje.",
+      "Fique o tempo que quiser, sem pressa e sem tela.",
+      "Ao sair, seque-se com carinho e beba um copo de água."
+    ]
+  },
+  {
+    "id": "carta-nao-enviada",
+    "title": "Carta Não Enviada",
+    "kind": "ritual",
+    "summary": "Escreva tudo o que sente para quem você não vai (ou não deve) procurar.",
+    "phases": ["minguante"],
+    "intentions": ["deixar-ir"],
+    "products": ["papel-de-carta-creme", "vela-de-lavanda-desapego", "kit-deixar-ir"],
+    "steps": [
+      "Escreva uma carta sem filtro, sabendo que ela não será entregue.",
+      "Releia em voz alta, uma única vez.",
+      "Dobre o papel e guarde por uma noite.",
+      "No dia seguinte, rasgue em pedaços pequenos e descarte com gratidão."
+    ]
+  },
+  {
+    "id": "cha-de-gratidao",
+    "title": "Chá da Gratidão",
+    "kind": "ritual",
+    "summary": "Um chá de camomila com mel para encerrar o dia agradecendo.",
+    "phases": ["cheia"],
+    "intentions": ["gratidao", "amor-proprio"],
+    "products": ["camomila-flores", "mel-silvestre"],
+    "steps": [
+      "Prepare o chá de camomila e adoce com uma colher de mel.",
+      "Segure a xícara com as duas mãos e sinta o calor.",
+      "Diga em voz alta uma conquista, por menor que seja.",
+      "Beba devagar e deixe o dia terminar em paz."
+    ]
+  },
+  {
+    "id": "sal-do-desapego",
+    "title": "Sal do Desapego",
+    "kind": "ritual",
+    "summary": "Um pé-de-sal na água para soltar o cansaço acumulado.",
+    "phases": ["minguante"],
+    "intentions": ["deixar-ir"],
+    "products": ["sal-grosso-ervas", "selenita"],
+    "steps": [
+      "Dissolva uma colher de sal grosso em uma bacia com água morna.",
+      "Mergulhe os pés e pense em algo que você quer soltar.",
+      "Respire fundo dez vezes, soltando o ar devagar.",
+      "Descarte a água no ralo agradecendo pelo que ficou de aprendizado."
+    ]
+  }
+]
