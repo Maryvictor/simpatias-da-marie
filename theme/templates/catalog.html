@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% from '_macros.html' import spell_card with context %}
+{% set nav_slug = 'catalogo' %}
+{% block title %}{{ page.title }} – {{ SITENAME }}{% endblock %}
+{% block content %}
+<h1>{{ page.title }}</h1>
+<p class="lead">Três simpatias interativas e cinco rituais para fazer com calma, em casa. Cada uma indica a fase da Lua mais simpática para ela.</p>
+
+<h2>Simpatias interativas</h2>
+<div class="grid">
+  {% for spell in SPELLS if spell.kind == 'interativa' %}{{ spell_card(spell) }}{% endfor %}
+</div>
+
+<h2>Rituais para fazer em casa</h2>
+<div class="grid">
+  {% for spell in SPELLS if spell.kind == 'ritual' %}{{ spell_card(spell) }}{% endfor %}
+</div>
+{% endblock %}

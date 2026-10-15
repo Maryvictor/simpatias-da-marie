@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% from '_macros.html' import spell_card with context %}
+{% block title %}{{ SITENAME }} – simpatias, lua e imaginação{% endblock %}
+{% block content %}
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero-petals" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+  <p class="eyebrow">Espiritualidade, natureza e amor-próprio</p>
+  <h1 id="hero-title">Simpatias da Marie</h1>
+  <p class="lead">Um jardim virtual de rituais gentis: maçãs com mel, rosas ao vento, cartas que voam e conversas com personagens que não têm medo de sentir.</p>
+  <p class="actions">
+    <a class="btn" href="{{ SITEURL }}/simpatias/maca-fuji-com-mel/index.html">Começar uma simpatia</a>
+    <a class="btn btn-ghost" href="{{ SITEURL }}/lua/index.html">Ver a Lua de hoje</a>
+  </p>
+</section>
+
+<section aria-labelledby="interativas">
+  <h2 id="interativas">Três simpatias para fazer agora</h2>
+  <div class="grid">
+    {% for spell in SPELLS if spell.kind == 'interativa' %}{{ spell_card(spell) }}{% endfor %}
+  </div>
+</section>
+
+<section class="split" aria-labelledby="personagens">
+  <div>
+    <h2 id="personagens">Duas vozes para conversar</h2>
+    <p>Sem inteligência artificial e sem servidor: as respostas vêm de mensagens escritas à mão e de regras simples, no seu próprio navegador.</p>
+  </div>
+  <div class="grid grid-2">
+    <article class="card">
+      <h3>{{ LACAN.name }}</h3>
+      <p>{{ LACAN.tagline }}</p>
+      <a class="btn btn-ghost" href="{{ SITEURL }}/lacan-responde/index.html">Conversar</a>
+    </article>
+    <article class="card">
+      <h3>{{ MARCIA.name }}</h3>
+      <p>{{ MARCIA.tagline }}</p>
+      <a class="btn btn-ghost" href="{{ SITEURL }}/marcia-sensitiva/index.html">Conversar</a>
+    </article>
+  </div>
+</section>
+
+<section class="split" aria-labelledby="mais">
+  <div>
+    <h2 id="mais">Mais para explorar</h2>
+  </div>
+  <ul class="link-list">
+    <li><a href="{{ SITEURL }}/catalogo/index.html">Catálogo com todas as simpatias</a></li>
+    <li><a href="{{ SITEURL }}/loja/index.html">Loja demonstrativa de artefatos naturais</a></li>
+    <li><a href="{{ SITEURL }}/lua/index.html">Calendário lunar e suas intenções</a></li>
+    <li><a href="{{ SITEURL }}/historico/index.html">Histórico das suas últimas experiências</a></li>
+  </ul>
+</section>
+{% endblock %}

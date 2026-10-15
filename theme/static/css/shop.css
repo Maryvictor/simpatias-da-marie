@@ -1,0 +1,9 @@
+/* Loja demonstrativa. */
+.filters { display: grid; gap: 0.8rem 1rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr)); align-items: end; margin-block: 1rem; }
+.product-card img { align-self: flex-start; background: var(--rose-50); border-radius: 16px; padding: 8px; }
+.product-card h3 { font-size: 1.15rem; margin-top: 0.4rem; }
+.product-card h3 a { text-decoration: none; }
+.price { font-weight: 700; color: var(--gold-800); margin-top: auto; }
+.product-detail { display: grid; gap: 1.5rem; grid-template-columns: 1fr; margin-block: 1rem 2rem; }
+.product-detail > img { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 1rem; }
+@media (min-width: 40rem) { .product-detail { grid-template-columns: 200px 1fr; } }

@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% from '_macros.html' import phase_tags, intention_name, category_name, product_card with context %}
+{% set nav_slug = 'loja' %}
+{% block title %}{{ product.name }} – {{ SITENAME }}{% endblock %}
+{% block head_extra %}<link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/shop.css">{% endblock %}
+{% block content %}
+<p><a href="{{ SITEURL }}/loja/index.html">← Voltar para a loja</a></p>
+<article class="product-detail">
+  <img src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/categories/{{ product.category }}.svg" alt="" width="160" height="160">
+  <div>
+    <p class="eyebrow">{{ category_name(product.category) }}</p>
+    <h1>{{ product.name }}</h1>
+    <p class="lead">{{ product.description }}</p>
+    <p class="price">{{ product.price_cents | price }} <span class="small">· preço ilustrativo</span></p>
+    <p class="small">Intenções:
+      {% for i in product.intentions %}<span class="tag">{{ intention_name(i) }}</span> {% endfor %}
+    </p>
+    {{ phase_tags(product.phases) }}
+    <p class="notice" role="note">Produto de vitrine demonstrativa: não é possível comprar.</p>
+  </div>
+</article>
+
+{% if kit_items %}
+<section aria-labelledby="conteudo-kit">
+  <h2 id="conteudo-kit">O que vem no kit</h2>
+  <div class="grid">{% for item in kit_items %}{{ product_card(item) }}{% endfor %}</div>
+</section>
+{% endif %}
+
+{% if related_spells %}
+<section aria-labelledby="simpatias-relacionadas">
+  <h2 id="simpatias-relacionadas">Combina com estas simpatias</h2>
+  <ul class="link-list">
+    {% for spell in related_spells %}
+    <li><a href="{% if spell.kind == 'interativa' %}{{ SITEURL }}/{{ spell.page }}/index.html{% else %}{{ SITEURL }}/catalogo/index.html#{{ spell.id }}{% endif %}">{{ spell.title }}</a></li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}
+{% endblock %}

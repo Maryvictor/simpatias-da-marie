@@ -1,0 +1,11 @@
+{
+  "scenarios": [
+    {"id": "reconquista", "label": "Quero reconquistar alguém", "keywords": ["reconquist", "voltar com", "volta com", "quero de volta", "recuperar"], "suggestion": {"spell": "carta-nao-enviada", "text": "Experimente escrever a Carta Não Enviada: ponha no papel tudo o que gostaria de dizer, sem entregar."}},
+    {"id": "comprometido", "label": "Gosto de alguém que tem compromisso", "keywords": ["comprometid", "casad", "namorand", "namorad", "tem namorad", "tem namorada", "ficando com outr", "pessoa ocupada", "relacionamento dele", "relacionamento dela"], "suggestion": {"spell": "correios-imaginarios", "text": "Que tal escrever nos Correios Imaginários? A carta voa, mas não chega a ninguém, e o sentimento ganha um lugar."}},
+    {"id": "desapego", "label": "Não consigo desapegar", "keywords": ["desapeg", "soltar", "esquecer", "superar", "saudade", "deixar ir", "nao consigo parar", "apegad"], "suggestion": {"spell": "rosa-branca-no-vento", "text": "Deixe as pétalas da Rosa Branca no Vento levarem simbolicamente o que pesa."}},
+    {"id": "amor-proprio", "label": "Quero me amar mais", "keywords": ["amor proprio", "me amar", "autoestima", "me valorizar", "me cuidar", "gostar de mim", "me aceitar"], "suggestion": {"spell": "maca-fuji-com-mel", "text": "Faça a Simpatia das Maçãs Fuji com Mel e receba uma doçura só sua."}},
+    {"id": "recomeco", "label": "Preciso recomeçar", "keywords": ["recomec", "comecar de novo", "nova fase", "novo ciclo", "mudar de vida", "virar a pagina", "do zero"], "suggestion": {"spell": "vela-do-recomeco", "text": "Acenda a Vela do Recomeço em uma Lua Nova e marque o primeiro passo."}}
+  ],
+  "crisis_keywords": ["suicid", "me matar", "morrer", "tirar minha vida", "acabar com tudo", "automutil", "me machucar"],
+  "crisis_message": "Parece que você está passando por um momento muito difícil, e isso importa mais que qualquer simpatia. Procure alguém de confiança agora. No Brasil, o CVV atende 24 horas pelo telefone 188, gratuitamente, ou em cvv.org.br. Em risco imediato, ligue 192 (SAMU)."
+}

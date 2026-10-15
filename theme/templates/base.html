@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
+  <meta name="description" content="{% block description %}Simpatias virtuais, calendário lunar, loja demonstrativa e conversas simbólicas. {{ SITESUBTITLE }}{% endblock %}">
+  <meta name="theme-color" content="#fde4ea">
+  <link rel="icon" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/base.css">
+  <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/components.css">
+  {% block head_extra %}{% endblock %}
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="brand" href="{{ SITEURL }}/index.html" aria-label="{{ SITENAME }} – página inicial">
+        <img src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/logo.svg" alt="" width="40" height="40">
+        <span>{{ SITENAME }}</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu" data-nav-toggle>Menu</button>
+      <nav id="menu" class="site-nav" aria-label="Principal" data-nav>
+        <ul>
+          {% set links = [('catalogo', 'Simpatias'), ('loja', 'Loja'), ('lua', 'Lua'), ('lacan-responde', 'Lacan'), ('marcia-sensitiva', 'Márcia'), ('historico', 'Histórico'), ('sobre', 'Sobre')] %}
+          {% for slug, label in links %}
+          <li><a href="{{ SITEURL }}/{{ slug }}/index.html"{% if nav_slug is defined and nav_slug == slug %} aria-current="page"{% endif %}>{{ label }}</a></li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo" class="container" tabindex="-1">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="signature">{{ SITESUBTITLE }}</p>
+      <p class="small">Conteúdo simbólico e lúdico, sem promessas ou aconselhamento profissional. Nada do que você escreve aqui sai do seu navegador.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/shared/nav.js"></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

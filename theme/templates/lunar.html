@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% set nav_slug = 'lua' %}
+{% block title %}{{ page.title }} – {{ SITENAME }}{% endblock %}
+{% block head_extra %}<link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/lunar.css">{% endblock %}
+{% block content %}
+<h1>{{ page.title }}</h1>
+<div data-lunar>
+  <section class="card lunar-today" aria-label="Fase da Lua hoje" data-lunar-today>
+    <p>Calculando a fase da Lua… (é preciso JavaScript ativado; o cálculo acontece no seu navegador).</p>
+  </section>
+
+  <div class="split">
+    <section aria-labelledby="proximas">
+      <h2 id="proximas">Próximas fases principais</h2>
+      <ul class="plain" data-lunar-next></ul>
+    </section>
+    <section aria-labelledby="mes">
+      <div class="cal-nav">
+        <button type="button" class="btn btn-quiet" data-lunar-prev aria-label="Mês anterior">‹</button>
+        <h2 id="mes" data-lunar-month aria-live="polite"></h2>
+        <button type="button" class="btn btn-quiet" data-lunar-next-month aria-label="Próximo mês">›</button>
+      </div>
+      <div class="cal-grid" role="grid" aria-labelledby="mes" data-lunar-grid></div>
+    </section>
+  </div>
+
+  <h2>As quatro luas da marca</h2>
+  <p class="small">A fase é astronômica (calculada). O significado de cada fase é <strong>simbólico</strong>, criado pela marca para inspirar rituais, e não tem base científica.</p>
+  <div class="grid">
+    {% for phase in PHASES %}
+    <section class="card phase-panel" data-phase-panel="{{ phase.id }}" aria-labelledby="fase-{{ phase.id }}">
+      <h3 id="fase-{{ phase.id }}">{{ phase.name }} <span class="tag tag-current" data-current-badge hidden>agora</span></h3>
+      <p class="eyebrow">{{ phase.theme }}</p>
+      <p>{{ phase.meaning }}</p>
+      <p><strong>Sugestão:</strong> {{ phase.tip }}</p>
+      <h4>Simpatias</h4>
+      <ul class="plain">
+        {% for spell in SPELLS if phase.id in spell.phases %}
+        <li><a href="{% if spell.kind == 'interativa' %}{{ SITEURL }}/{{ spell.page }}/index.html{% else %}{{ SITEURL }}/catalogo/index.html#{{ spell.id }}{% endif %}">{{ spell.title }}</a></li>
+        {% endfor %}
+      </ul>
+      <h4>Produtos</h4>
+      {% set ns = namespace(n=0) %}{% for p in PRODUCTS if phase.id in p.phases %}{% set ns.n = ns.n + 1 %}{% endfor %}
+      <p><a href="{{ SITEURL }}/loja/index.html?fase={{ phase.id }}">Ver os {{ ns.n }} produtos desta fase</a></p>
+    </section>
+    {% endfor %}
+  </div>
+
+  <section aria-labelledby="precisao">
+    <h2 id="precisao">Sobre a precisão</h2>
+    <p>O cálculo usa a série simplificada de Jean Meeus (<em>Astronomical Algorithms</em>), com erro típico de menos de 0,5° na elongação (cerca de uma hora no horário das fases principais). Cada dia é avaliado ao meio-dia no seu fuso horário. As quatro categorias dividem o ciclo em quartos de 90° centrados nas fases principais: cerca de 3,7 dias para cada lado da Lua Nova e da Lua Cheia. A imagem da Lua segue o hemisfério sul (a crescente fica iluminada à esquerda).</p>
+  </section>
+</div>
+
+<script type="application/json" id="phases-data">{{ PHASES | tojson }}</script>
+{% endblock %}
+{% block scripts %}<script type="module" src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/lunar/calendar-ui.js"></script>{% endblock %}

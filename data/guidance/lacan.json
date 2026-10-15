@@ -1,0 +1,44 @@
+{
+  "id": "lacan",
+  "name": "Lacan Responde",
+  "tagline": "Reflexões afetuosas para quem pensa com o coração.",
+  "greeting": "Sente-se. Antes de qualquer resposta, talvez valha escutar a pergunta que a sua pergunta esconde.",
+  "again": "Pergunte de outro jeito",
+  "messages": {
+    "reconquista": [
+      "Quando dizemos que queremos alguém de volta, às vezes queremos de volta a versão de nós mesmos que existia ao lado dessa pessoa. O que, em você, sente falta de casa?",
+      "O desejo é curioso: insiste justamente onde falta. Antes de reconquistar, pergunte o que essa pessoa representa para você. A resposta pode mudar o rumo da conversa.",
+      "Reconquistar é um verbo que exige dois. Que tal começar pelo que só depende de você: escrever o que sente e observar o que a carta revela?",
+      "Há afetos que pedem retorno e outros que pedem tradução. Experimente traduzir o que sente em palavras, ainda que não as entregue."
+    ],
+    "comprometido": [
+      "O desejo por quem já tem um compromisso costuma falar mais de nós do que do outro. O que, nessa situação, parece proibido e por isso tão atraente?",
+      "Interesse por alguém comprometido pede cuidado: há outras pessoas envolvidas, e você também merece um lugar que não seja de espera. O que você precisa receber, afinal?",
+      "Nomear o que sentimos já diminui sua força de arrastar. Diga a si mesma, sem culpa: eu sinto isto. E então pergunte: o que faço com o que sinto?",
+      "Entre o sentimento e o ato existe um espaço, e é nele que mora a escolha. Que a sua escolha seja gentil com todos, a começar por você."
+    ],
+    "desapego": [
+      "Desapegar não é apagar: é mudar o lugar que algo ocupa. O que você poderia guardar como memória, e não mais como espera?",
+      "A saudade é uma forma de amor que perdeu o endereço. Dê a ela um novo destino: uma carta, uma caminhada, uma conversa com quem a escuta bem.",
+      "Quem se apega muitas vezes aprendeu que perder é perigoso. Talvez o trabalho seja mostrar a si mesma que, depois da perda, ainda há chão.",
+      "Não há prazo certo para soltar. Há, porém, pequenos gestos de despedida. Qual deles caberia na sua semana?"
+    ],
+    "amor-proprio": [
+      "Amar-se não é um sentimento que chega pronto; é uma prática. Que pequeno gesto de cuidado você faria hoje sem esperar aplauso?",
+      "Falamos conosco com uma dureza que jamais usaríamos com uma amiga. Experimente trocar uma frase cruel da sua cabeça por uma frase que você diria a alguém querido.",
+      "O olhar do outro nos constitui, é verdade, mas ele não é o único espelho disponível. Escolha hoje um espelho mais generoso.",
+      "Valorizar-se começa por reparar no que já foi feito. Que três coisas você sustentou até aqui, mesmo quando foi difícil?"
+    ],
+    "recomeco": [
+      "Todo recomeço carrega o que veio antes, só que reorganizado. O que você leva da fase anterior e o que deixa na porta?",
+      "Recomeçar não exige coragem enorme; exige um primeiro gesto pequeno. Qual seria o menor passo possível amanhã cedo?",
+      "A página em branco assusta porque nos devolve a liberdade. Permita-se escrever uma primeira linha imperfeita.",
+      "Mudar de fase é também luto pela anterior. Reserve um momento para agradecer o que foi, antes de celebrar o que será."
+    ],
+    "geral": [
+      "Interessante o que você traz. Talvez a pergunta mais fértil seja: o que você espera sentir quando isso se resolver?",
+      "Nem tudo precisa de resposta imediata. Às vezes basta dar um nome ao que se sente e deixar que o tempo faça sua parte.",
+      "Escolha uma das situações acima para eu responder com mais cuidado, ou conte com suas palavras o que está em jogo."
+    ]
+  }
+}

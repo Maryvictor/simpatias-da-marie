@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% set spell = (SPELLS | selectattr('id', 'equalto', page.spell_id) | list)[0] %}
+{% set is_letter = spell.id == 'correios-imaginarios' %}
+{% set nav_slug = 'catalogo' %}
+{% block title %}{{ spell.title }} – {{ SITENAME }}{% endblock %}
+{% block description %}{{ spell.summary }}{% endblock %}
+{% block head_extra %}<link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/spells.css">{% endblock %}
+{% block content %}
+<p><a href="{{ SITEURL }}/catalogo/index.html">← Todas as simpatias</a></p>
+<h1>{{ spell.title }}</h1>
+<p class="lead">{{ spell.summary }}</p>
+
+<section class="ritual" data-ritual="{{ spell.id }}" aria-label="Ritual interativo">
+  <form class="card ritual-form" data-form novalidate>
+    {% if is_letter %}
+    <label for="entrada">Escreva a sua carta</label>
+    <textarea id="entrada" data-input rows="7" maxlength="1200" placeholder="Querida(o)... (ela não será enviada a ninguém)" autocomplete="off" required></textarea>
+    {% else %}
+    <label for="entrada">Seu nome ou uma intenção</label>
+    <input id="entrada" data-input type="text" maxlength="60" placeholder="Ex.: Ana, ou &quot;paz em casa&quot;" autocomplete="off" required>
+    {% endif %}
+    <p class="small"><span data-counter aria-hidden="true"></span></p>
+    <p class="error" role="alert" data-error hidden></p>
+    <button class="btn" type="submit">{% if is_letter %}Ver minha carta no papel{% else %}Iniciar a simpatia{% endif %}</button>
+    <p class="small privacy">
+      {% if is_letter %}Sua carta fica apenas na memória desta página: não é enviada a ninguém e não vai para o histórico.
+      {% else %}O que você escreve fica apenas nesta página e não é guardado. O histórico registra só a simpatia e o horário.{% endif %}
+    </p>
+  </form>
+
+  <div class="stage" data-stage data-state="{{ 'escrever' if is_letter else 'intencao' }}">
+    {% if spell.id == 'maca-fuji-com-mel' %}{% include 'partials/apple.html' %}
+    {% elif spell.id == 'rosa-branca-no-vento' %}{% include 'partials/rose.html' %}
+    {% else %}{% include 'partials/letter.html' %}{% endif %}
+
+    <div class="result" role="status" aria-live="polite">
+      {% if not is_letter %}<p class="echo" data-echo hidden></p>{% endif %}
+      <p class="message" data-message tabindex="-1"></p>
+      <button type="button" class="btn btn-ghost" data-restart data-show="{{ 'mensagem' if not is_letter else 'fim' }}" hidden>Fazer de novo</button>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="como-funciona">
+  <h2 id="como-funciona">Como funciona</h2>
+  <ol>{% for step in spell.steps %}<li>{{ step }}</li>{% endfor %}</ol>
+  <p class="small">Uma simpatia virtual é um gesto simbólico e brincante. Ela não promete resultados e não substitui conversar com quem você confia ou procurar ajuda profissional quando precisar.</p>
+</section>
+
+<script type="application/json" id="spells-data">{{ SPELLS | tojson }}</script>
+{% endblock %}
+{% block scripts %}<script type="module" src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/spells/spell-ui.js"></script>{% endblock %}

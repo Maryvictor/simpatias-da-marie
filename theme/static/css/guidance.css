@@ -1,0 +1,11 @@
+/* Lacan Responde e Márcia Sensitiva. */
+.guidance { max-width: 46rem; }
+.chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.chip { font: inherit; padding: 0.55rem 1rem; min-height: 44px; border-radius: 999px; border: 2px solid var(--rose-400); background: var(--white); color: var(--rose-800); cursor: pointer; }
+.chip[aria-pressed="true"] { background: var(--rose-600); border-color: var(--rose-600); color: var(--white); }
+.bubble { background: var(--white); border: 1px solid var(--line); border-radius: 20px 20px 20px 4px; padding: 1rem 1.2rem; box-shadow: var(--shadow); font-size: 1.1rem; outline: none; }
+.bubble-greeting { font-style: italic; margin-block: 1rem; }
+.guidance-lacan .bubble { font-family: var(--font-display); border-left: 6px solid var(--gold); }
+.guidance-marcia .bubble { border-left: 6px solid var(--rose-400); }
+.answer { margin-block: 1.5rem; }
+.disclaimer { margin-top: 2rem; }

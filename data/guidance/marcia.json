@@ -1,0 +1,44 @@
+{
+  "id": "marcia",
+  "name": "Márcia Sensitiva",
+  "tagline": "Direta, divertida e sem enrolação (mas com muito carinho).",
+  "greeting": "Oi, flor! Senta aí, pega um chá e me conta tudo. Eu leio as entrelinhas, mas ajuda se você ler as linhas também.",
+  "again": "Sortear outra visão",
+  "messages": {
+    "reconquista": [
+      "Olha, flor, minha intuição diz uma coisa: antes de reconquistar, pergunta se a pessoa está nessa dança também. Dança com um só pisa no próprio pé.",
+      "Reconquista é como bolo: se desandou, não adianta insistir no forno. Às vezes é receita nova. Escreve uma carta não enviada e vê o que sobra.",
+      "Eu vejo uma mensagem digitada às duas da manhã e apagada às duas e dez. Que sábia você! Mantém o hábito de apagar e se cuida.",
+      "A bola de cristal está meio embaçada, mas a mensagem é nítida: volta pra você primeiro. O resto a gente combina depois."
+    ],
+    "comprometido": [
+      "Ai, amiga, pessoa comprometida é aquele doce na vitrine: bonito, mas já tem dono. Admira de longe e cuida do seu coração.",
+      "Vou ser direta, porque a Márcia não vive de rodeio: você merece alguém inteiro, não metade de agenda. Respeita o seu tempo.",
+      "Sentir é livre, agir é escolha. Pode sentir à vontade, mas decide com carinho por todo mundo, inclusive por você.",
+      "Meus búzios dizem: guarda esse sentimento numa carta que não vai ser enviada. Ele sai do peito e você respira."
+    ],
+    "desapego": [
+      "Desapegar é tipo arrumar a gaveta: tem coisa que você não usa mais e mesmo assim guarda. Hoje, uma coisinha só. Começa pela meia sem par!",
+      "A saudade bate, né? Deixa ela entrar, toma um café e se despede com educação. Ela volta, mas sempre mais curtinha.",
+      "Eu sinto uma energia de \"já deu\" no ar, mas seu coração ainda quer um bis. Dá um bis só pra você: um banho demorado e música boa.",
+      "Quer simpatia? Rosa branca, vento e uma respirada funda. Funciona como lembrete de que você sobrevive a despedidas."
+    ],
+    "amor-proprio": [
+      "Primeira lição, flor: você não é extra no seu próprio filme. Fala com você como falaria com sua melhor amiga.",
+      "Amor-próprio não é espelho cheio de elogio; é cuidar de você até nos dias em que o espelho está feio. Bora marcar aquele médico que você adia?",
+      "Vejo em você uma luz meio escondida atrás da pilha de louça. Hoje, faz uma coisa só pra você, sem justificar.",
+      "Dica da Márcia: faz uma lista de cinco coisas que você faz bem. Se não conseguir, pede ajuda a quem te ama. Vai se surpreender."
+    ],
+    "recomeco": [
+      "Recomeço é com vela branca, respiração funda e coragem de quem sabe que o pior já passou. Bora?",
+      "Sabe a frase \"vou começar na segunda\"? Hoje é um ótimo dia da semana pra isso. Escolhe um passo pequeno e dá.",
+      "Vira a página, flor! E se der branco, escreve uma linha torta mesmo. Linha torta também é história.",
+      "Minhas cartas mostram novidade vindo, mas só chega por quem abre a porta. Desce o sapato do armário e vai."
+    ],
+    "geral": [
+      "Hmm, interessante... Minha intuição precisa de um pouco mais de contexto. Escolhe uma das situações aí em cima ou me conta de outro jeito.",
+      "A bola de cristal pediu um tempinho e a xícara de chá também. Que tal escolher um dos temas pra eu acertar a mira?",
+      "Não consegui captar o assunto, flor, mas sigo aqui. Respira e escolhe uma das situações ou me escreve de outro jeito."
+    ]
+  }
+}
